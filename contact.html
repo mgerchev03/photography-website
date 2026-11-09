@@ -313,7 +313,6 @@
                     
                     <form name="contact" method="POST" data-netlify="true">
 						<input type="hidden" name="form-name" value="contact">
-                        <input type="hidden" name="form-name" value="contact">
                         
                         <div class="form-group">
                             <label for="name">Вашето име</label>
@@ -347,6 +346,28 @@
             </div>
         </section>
     </main>
+	
+	<script>
+  document.querySelector('form[name="contact"]').addEventListener('submit', function(e) {
+    e.preventDefault();
+    let myForm = this;
+    let formData = new FormData(myForm);
+
+    fetch('/', {
+      method: 'POST',
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString()
+    })
+    .then(() => {
+      alert('Благодаря Ви! Вашето съобщение беше изпратено успешно.');
+      myForm.reset();
+    })
+    .catch((error) => {
+      alert('Възникна грешка при изпращането. Моля, опитайте отново.');
+      console.log(error);
+    });
+  });
+</script>
 
 </body>
 </html>

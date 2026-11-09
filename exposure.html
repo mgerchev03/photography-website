@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Експозиция</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<header>
+    <div class="navbar container">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Начало</a></li>
+          <li><a href="exposure.html">Експозиция</a></li>
+          <li><a href="composition.html">Композиция</a></li>
+          <li><a href="editing.html">Обработка</a></li>
+          <li><a href="gallery.html">Галерия</a></li>
+		  <li><a href="gear.html">Оборудване</a></li>
+		  <li><a href="tips.html">Съвети и Трикове</a></li>
+		  <li><a href="contact.html">Контакти</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-header container">
+    <h1>Какви са трите стълба на Експозицията</h1>
+    <p>Експозицията определя колко светлина достига до сензора на фотоапарата. Тя се контролира от три основни настройки, известни като „Триъгълник на експозицията“.</p>
+  </section>
+
+  <section class="container features" style="padding-top: 0;">
+    <h2 class="section-title">Триъгълник на експозицията</h2>
+    
+    <div class="cards-grid">
+      <div class="card">
+        <h3>I. Бленда (Aperture)</h3>
+        <div class="card-image-box">
+          <img src="assets/aperture.gif" alt="Бленда">
+        </div>
+        <p>Блендата е отворът вътре в обектива, през който преминава светлината. Измерва се в f-числа (напр. f/1.8, f/4, f/11).</p>
+        <ul style="color: var(--text-muted); padding-left: 18px; font-size: 0.9rem;">
+          <li style="margin-bottom: 8px;"><strong>Голям отвор (f/1.4 - f/2.8):</strong> Влиза много светлина, заден план се размазва.</li>
+          <li><strong>Малък отвор (f/8 - f/16):</strong> Влиза по-малко светлина, целият кадър е на фокус.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>II. Скорост на затвора (Shutter Speed)</h3>
+        <div class="card-image-box">
+          <img src="assets/shutter_speed.gif" alt="Скорост на затвора">
+        </div>
+        <p>Времето, за което затворът на апарата остава отворен, за да изложи сензора на светлина.</p>
+        <ul style="color: var(--text-muted); padding-left: 18px; font-size: 0.9rem;">
+          <li style="margin-bottom: 8px;"><strong>Бърза скорост (1/1000s - 1/4000s):</strong> Замразява бързо движещи се обекти.</li>
+          <li><strong>Бавна скорост (1/2s - секунди):</strong> Улавя следи от светлина или прави водата „копринена“.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>III. ISO Чувствителност</h3>
+        <div class="card-image-box">
+          <img src="assets/iso_exposure.gif" alt="ISO Чувствителност">
+        </div>
+        <p>ISO определя чувствителността на сензора към наличната светлина спрямо това, което искаш да снимаш.</p>
+        <ul style="color: var(--text-muted); padding-left: 18px; font-size: 0.9rem;">
+          <li style="margin-bottom: 8px;"><strong>Снимаш при нисък ISO (100 - 400):</strong> За слънчево време. Максимално качество и детайл.</li>
+          <li><strong>Снимаш при висок ISO (3200 - 6400+):</strong> За слаба светлина, но вкарва визуален шум.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+  <section class="container" style="margin-bottom: 40px;">
+    <div class="card" style="text-align: center;">
+      <h2 style="margin-bottom: 20px;">Пълна схема на експозицията</h2>
+      <div class="card-image-box" style="max-width: 700px; margin: 0 auto; height: auto;">
+        <img src="assets/exposure-triangle.jpg" alt="Триъгълник на експозицията - пълна схема" style="width: 100%; height: auto; object-fit: contain;">
+      </div>
+    </div>
+  </section>
+  
+  <section class="simulator-section container">
+    <div class="card simulator-card">
+      <h2>Светлина и качество</h2>
+      <p class="sim-desc">Започни да експериментираш със слайдърите, за да видиш как промяната на параметрите влияе върху светлината и качеството на кадъра.</p>
+
+      <div class="simulator-layout">
+        <div class="sim-controls">
+          
+          <div class="control-group">
+            <label for="aperture">Бленда (Aperture): <span id="aperture-val">f/2.8</span></label>
+            <input type="range" id="aperture" min="1.4" max="16" step="0.7" value="8.4">
+            <small>Ако е по-малко f-числото то тогава е повече светлината & плиткия фокус (боке).</small>
+          </div>
+
+          <div class="control-group">
+            <label for="shutter">Скорост на затвора: <span id="shutter-val">1/250s</span></label>
+            <input type="range" id="shutter" min="1" max="7" step="1" value="4">
+            <small>Бърз затвор е да замразява движението; Бавен затвор е да размазва движението.</small>
+          </div>
+
+          <div class="control-group">
+            <label for="iso">ISO светлочувствителност: <span id="iso-val">100</span></label>
+            <input type="range" id="iso" min="100" max="6400" step="100" value="3200">
+            <small>Нисък ISO означава по чиста снимка; Висок ISO означава по светла снимка но с повече шум.</small>
+          </div>
+
+        </div>
+
+        <div class="sim-preview">
+          <div class="photo-preview-wrapper">
+            <img src="assets/sample.jpg" id="sim-image" alt="Тестова снимка">
+            <div class="noise-overlay" id="noise-overlay"></div>
+            <span class="preview-text" id="exposure-status">Балансирана експозиция</span>
+          </div>
+          <div class="exposure-bar-container">
+            <span>Тъмно</span>
+            <div class="exposure-bar">
+              <div class="exposure-indicator" id="exposure-indicator"></div>
+            </div>
+            <span>Светло</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

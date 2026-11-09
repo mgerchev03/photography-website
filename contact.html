@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти - Фотографски наръчник & Портфолио</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+          --bg-color: #0f1115;
+          --card-bg: #181b20;
+          --text-main: #f1f3f5;
+          --text-muted: #9eabb8;
+          --accent-color: #ff5e36;
+          --accent-hover: #e04b25;
+          --border-color: #262a33;
+          --font-family: 'Inter', sans-serif;
+        }
+
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          background-color: var(--bg-color);
+          color: var(--text-main);
+          font-family: var(--font-family);
+          line-height: 1.6;
+        }
+
+        .container {
+          width: 90%;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        header {
+          background-color: rgba(15, 17, 21, 0.9);
+          backdrop-filter: blur(10px);
+          position: sticky;
+          top: 0;
+          z-index: 1000;
+          border-bottom: 1px solid var(--border-color);
+        }
+
+        .navbar {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          padding: 18px 0;
+        }
+
+        .nav-links {
+          display: flex;
+          list-style: none;
+          gap: 24px;
+        }
+
+        .nav-links a {
+          color: var(--text-muted);
+          text-decoration: none;
+          font-size: 0.95rem;
+          font-weight: 500;
+          transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+          color: var(--accent-color);
+        }
+
+        .badge {
+          display: inline-block;
+          background-color: rgba(255, 94, 54, 0.15);
+          color: var(--accent-color);
+          padding: 6px 14px;
+          border-radius: 20px;
+          font-size: 0.85rem;
+          font-weight: 600;
+          margin-bottom: 16px;
+          border: 1px solid rgba(255, 94, 54, 0.3);
+        }
+
+        .btn {
+          display: inline-block;
+          padding: 12px 28px;
+          border-radius: 8px;
+          text-decoration: none;
+          font-weight: 600;
+          transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+          background-color: var(--accent-color);
+          color: #fff;
+        }
+
+        .btn-primary:hover {
+          background-color: var(--accent-hover);
+        }
+
+        .page-header {
+          padding: 50px 0 25px 0;
+        }
+
+        .page-header h1 {
+          font-size: 2.3rem;
+          margin-bottom: 10px;
+        }
+
+        .page-header p {
+          color: var(--text-muted);
+          max-width: 800px;
+        }
+
+        /* Стилове за Контакти */
+        .contact-section {
+          padding-bottom: 80px;
+        }
+
+        .contact-grid {
+          display: grid;
+          grid-template-columns: 1fr 1.4fr;
+          gap: 30px;
+          margin-top: 20px;
+        }
+
+        .contact-panel {
+          background-color: var(--card-bg);
+          padding: 32px;
+          border-radius: 12px;
+          border: 1px solid var(--border-color);
+        }
+
+        .contact-panel h2 {
+          font-size: 1.4rem;
+          margin-bottom: 24px;
+          border-bottom: 2px solid var(--accent-color);
+          display: inline-block;
+          padding-bottom: 6px;
+          color: var(--text-main);
+        }
+
+        .info-box {
+          background-color: #14171c;
+          padding: 16px 20px;
+          border-radius: 8px;
+          margin-bottom: 16px;
+          border: 1px solid var(--border-color);
+          border-left: 4px solid var(--accent-color);
+          transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .info-box:last-child {
+          margin-bottom: 0;
+        }
+
+        .info-box:hover {
+          transform: translateX(5px);
+          border-color: var(--accent-color);
+        }
+
+        .info-box span.label {
+          display: block;
+          font-size: 0.8rem;
+          color: var(--text-muted);
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin-bottom: 4px;
+          font-weight: 600;
+        }
+
+        .info-box p.value {
+          font-size: 1.05rem;
+          font-weight: 500;
+          color: var(--text-main);
+          word-break: break-word;
+          margin: 0;
+        }
+
+        .info-box a {
+          color: var(--accent-color);
+          text-decoration: none;
+          transition: color 0.2s ease;
+        }
+
+        .info-box a:hover {
+          color: var(--accent-hover);
+          text-decoration: underline;
+        }
+
+        .form-group {
+          margin-bottom: 20px;
+        }
+
+        .form-group label {
+          display: block;
+          margin-bottom: 8px;
+          font-size: 0.95rem;
+          font-weight: 500;
+          color: var(--text-muted);
+        }
+
+        .form-control {
+          width: 100%;
+          padding: 12px 16px;
+          background-color: #14171c;
+          border: 1px solid var(--border-color);
+          border-radius: 8px;
+          color: var(--text-main);
+          font-family: var(--font-family);
+          font-size: 1rem;
+          transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-control:focus {
+          outline: none;
+          border-color: var(--accent-color);
+          box-shadow: 0 0 8px rgba(255, 94, 54, 0.25);
+        }
+
+        textarea.form-control {
+          resize: vertical;
+          min-height: 135px;
+        }
+
+        .btn-submit {
+          width: 100%;
+          cursor: pointer;
+          border: none;
+          font-family: var(--font-family);
+          font-size: 1rem;
+        }
+
+        footer {
+          padding: 32px 0;
+          border-top: 1px solid var(--border-color);
+          text-align: center;
+          color: var(--text-muted);
+          font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+          .contact-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">Начало</a></li>
+                <li><a href="exposure.html">Експозиция</a></li>
+                <li><a href="composition.html">Композиция</a></li>
+                <li><a href="editing.html">Обработка</a></li>
+                <li><a href="gallery.html">Галерия</a></li>
+                <li><a href="gear.html">Оборудване</a></li>
+                <li><a href="tips.html">Съвети и Трикове</a></li>
+                <li><a href="contact.html" class="active">Контакти</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-header">
+            <span class="badge">Обратна връзка</span>
+            <h1>Свържете се с мен</h1>
+            <p>Имате въпрос относно фотографските настройки, търсите съвет за техника или планирате индивидуална фотосесия? Попълнете формата или ме потърсете директно.</p>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-grid">
+                
+                <div class="contact-panel">
+                    <h2>Моите контакти</h2>
+
+                    <div class="info-box">
+                        <span class="label">Автор / Фотограф</span>
+                        <p class="value">Мариян Герчев</p>
+                    </div>
+
+                    <div class="info-box">
+                        <span class="label">Имейл адрес</span>
+                        <p class="value"><a href="mailto:mgerchev1912@gmail.com">mgerchev1912@gmail.com</a></p>
+                    </div>
+
+                    <div class="info-box">
+                        <span class="label">Телефон за връзка</span>
+                        <p class="value"><a href="tel:+35987613168">+359 87 613 168</a></p>
+                    </div>
+
+                    <div class="info-box">
+                        <span class="label">Локация</span>
+                        <p class="value">гр. Пловдив и региона</p>
+                    </div>
+
+                    <div class="info-box">
+                        <span class="label">Instagram</span>
+                        <p class="value"><a href="https://instagram.com/mar1an_ph" target="_blank">@mar1an_ph</a></p>
+                    </div>
+                </div>
+
+<div class="contact-panel">
+    <h2>Изпратете съобщение</h2>
+    
+    <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Благодаря Ви, ' + document.getElementById('name').value + '! Вашето съобщение беше изпратено успешно.'); this.reset();">
+        
+        <div class="form-group">
+            <label for="name">Вашето име</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Въведете вашето име..." required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Вашият имейл</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="name@example.com" required>
+        </div>
+
+        <div class="form-group">
+            <label for="subject">Тема на запитването</label>
+            <select id="subject" name="subject" class="form-control">
+                <option value="session">Запитване за фотосесия (Портрет / Пейзаж / Събитие)</option>
+                <option value="question">Въпрос по наръчника и шпаргалката с настройки</option>
+                <option value="project">Предложение за съвместен проект</option>
+                <option value="other">Друго</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Съобщение</label>
+            <textarea id="message" name="message" class="form-control" placeholder="Опишете вашата идея, локация или въпрос тук..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-submit">Изпрати съобщението</button>
+    </form>
+    <!-- КРАЙ НА ФОРМУЛЯРА -->
+
+</div>
+
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

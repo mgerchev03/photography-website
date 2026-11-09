@@ -308,41 +308,39 @@
                     </div>
                 </div>
 
-<div class="contact-panel">
-    <h2>Изпратете съобщение</h2>
-    
-    <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Благодаря Ви, ' + document.getElementById('name').value + '! Вашето съобщение беше изпратено успешно.'); this.reset();">
-        
-        <div class="form-group">
-            <label for="name">Вашето име</label>
-            <input type="text" id="name" name="name" class="form-control" placeholder="Въведете вашето име..." required>
-        </div>
+                <div class="contact-panel">
+                    <h2>Изпратете съобщение</h2>
+                    
+                    <form name="contact" method="POST" data-netlify="true">
+                        
+                        <div class="form-group">
+                            <label for="name">Вашето име</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Въведете вашето име..." required>
+                        </div>
 
-        <div class="form-group">
-            <label for="email">Вашият имейл</label>
-            <input type="email" id="email" name="email" class="form-control" placeholder="name@example.com" required>
-        </div>
+                        <div class="form-group">
+                            <label for="email">Вашият имейл</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="name@example.com" required>
+                        </div>
 
-        <div class="form-group">
-            <label for="subject">Тема на запитването</label>
-            <select id="subject" name="subject" class="form-control">
-                <option value="session">Запитване за фотосесия (Портрет / Пейзаж / Събитие)</option>
-                <option value="question">Въпрос по наръчника и шпаргалката с настройки</option>
-                <option value="project">Предложение за съвместен проект</option>
-                <option value="other">Друго</option>
-            </select>
-        </div>
+                        <div class="form-group">
+                            <label for="subject">Тема на запитването</label>
+                            <select id="subject" name="subject" class="form-control">
+                                <option value="session">Запитване за фотосесия (Портрет / Пейзаж / Събитие)</option>
+                                <option value="question">Въпрос по наръчника и шпаргалката с настройки</option>
+                                <option value="project">Предложение за съвместен проект</option>
+                                <option value="other">Друго</option>
+                            </select>
+                        </div>
 
-        <div class="form-group">
-            <label for="message">Съобщение</label>
-            <textarea id="message" name="message" class="form-control" placeholder="Опишете вашата идея, локация или въпрос тук..." required></textarea>
-        </div>
+                        <div class="form-group">
+                            <label for="message">Съобщение</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Опишете вашата идея, локация или въпрос тук..." required></textarea>
+                        </div>
 
-        <button type="submit" class="btn btn-primary btn-submit">Изпрати съобщението</button>
-    </form>
-    <!-- КРАЙ НА ФОРМУЛЯРА -->
-
-</div>
+                        <button type="submit" class="btn btn-primary btn-submit">Изпрати съобщението</button>
+                    </form>
+                </div>
 
             </div>
         </section>

@@ -68,7 +68,7 @@ header {
   min-height: 80vh;
   display: flex;
   align-items: center;
-  background: #14171c url('../assets/hero-bg.jpg') center/cover no-repeat;
+  background: #14171c url('../assets/start_badge.jpg') center/cover no-repeat;
   border-bottom: 1px solid var(--border-color);
 }
 
